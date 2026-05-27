@@ -21,7 +21,7 @@ function App() {
 
   return (
     <CartProvider>
-      <Router>
+      <Router basename="/JuliaRense">
         <ScrollToTop />
         <CartButton />
         <div className="flex min-h-screen bg-[hsl(var(--background))]">
