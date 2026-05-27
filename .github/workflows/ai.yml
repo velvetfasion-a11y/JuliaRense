@@ -27,14 +27,15 @@ jobs:
           node-version: 20
 
       - name: Install and Build
-        run: |
-          npm install
-          npm run build
+        run: npm ci && npm run build
+
+      - name: SPA fallback (client-side routes on GitHub Pages)
+        run: cp dist/apps/web/index.html dist/apps/web/404.html
 
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './apps/web/dist' 
+          path: dist/apps/web 
 
       - name: Deploy to GitHub Pages
         id: deployment
