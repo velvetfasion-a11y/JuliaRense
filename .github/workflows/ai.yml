@@ -3,6 +3,7 @@ name: Deploy React Website
 on:
   push:
     branches: ["main"]
+  workflow_dispatch:
 
 # Grants permissions to GitHub to deploy to Pages
 permissions:
